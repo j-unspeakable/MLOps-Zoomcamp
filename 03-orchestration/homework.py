@@ -86,6 +86,9 @@ def get_paths(date = None):
     train_file = f"fhv_tripdata_{train_date.year}-{train_date.month:02d}.parquet"
     val_file = f"fhv_tripdata_{val_date.year}-{val_date.month:02d}.parquet"
 
+    if not os.path.exists('./data'):
+        os.makedirs('./data')
+
     train_path = f"./data/{train_file}"
     val_path = f"./data/{val_file}"
 
